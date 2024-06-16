@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="org.thunderdome.vinstreelfx.MainController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <TableView fx:id="leaderboardTable" prefHeight="200.0" prefWidth="600.0">
+        <columns>
+            <TableColumn fx:id="rankColumn" prefWidth="75.0" text="Rank" />
+            <TableColumn fx:id="nameColumn" prefWidth="150.0" text="Name" />
+            <TableColumn fx:id="leetcodeStatsColumn" prefWidth="150.0" text="Leetcode Stats" />
+            <TableColumn fx:id="githubStatsColumn" prefWidth="150.0" text="Github Stats" />
+        </columns>
+    </TableView>
+
+    <Label fx:id="welcomeText" />
+    <Button onAction="#onAddFriendButtonClick" text="Add Friend" />
+    <Button onAction="#onRefreshButtonClick" text="Refresh" />
+</VBox>
