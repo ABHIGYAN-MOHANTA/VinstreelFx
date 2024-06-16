@@ -55,6 +55,7 @@ public class MainController {
         githubStatsColumn.setCellValueFactory(new PropertyValueFactory<>("githubStats"));
         loadFriends();
         executorService = Executors.newCachedThreadPool();
+        welcomeText.setText("Welcome to JavaFX Application! LeaderBoard is either fetching friends' data or no friends!");
         updateLeaderboardAsync();
     }
 
@@ -96,6 +97,7 @@ public class MainController {
                 super.succeeded();
                 Platform.runLater(() -> {
                     leaderboardTable.getItems().setAll(friends);
+                    welcomeText.setText("Welcome to JavaFX Application! LeaderBoard Updated!");
                 });
             }
         };
@@ -107,7 +109,6 @@ public class MainController {
     protected void onRefreshButtonClick() {
         loadFriends();
         updateLeaderboardAsync();
-        welcomeText.setText("Welcome to JavaFX Application! LeaderBoard Updated!");
     }
 
     public void onAddFriendButtonClick() throws IOException {
